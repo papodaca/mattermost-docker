@@ -9,6 +9,8 @@ services:
     volumes:
       - ./volumes/db/var/lib/postgresql/data:/var/lib/postgresql/data
       - /etc/localtime:/etc/localtime:ro
+      # uncomment to enable backup
+      # - ./volumes/db/wal-e/env:/etc/wal-e.d/env:ro
     environment:
       - POSTGRES_USER=mmuser
       - POSTGRES_PASSWORD=mmuser_password
